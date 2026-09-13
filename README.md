@@ -23,32 +23,28 @@ Optional variables:
 | `OWNER_USERNAME` | `@your_username` |
 | `UPDATE_CHANNEL` | `https://t.me/` |
 
-Do **not** add `BINANCE_API_KEY` or `BINANCE_SECRET_KEY`; this version does
-not use them.
-
 ## Run locally
 
 ```bash
 python -m venv .venv
 source .venv/bin/activate
 pip install -r requirements.txt
-export TELEGRAM_BOT_TOKEN="paste-your-token-here"
+export BOT_TOKEN="paste-your-token-here"
 export OWNER_ID="123456789"
 export ADMIN_ID="123456789"
-export BINANCE_PAY_ID="your-pay-id"
-python gxprivetbot.py
+python app.py
 ```
 
 ## Deploy to Render
 
-1. Push `gxprivetbot.py`, `requirements.txt`, `Procfile`, and `.gitignore` to
+1. Push `app.py`, `requirements.txt`, `Procfile`, and `.gitignore` to
    the GitHub repository.
 2. In Render, choose **New + → Web Service**, connect GitHub, and select that
    repository.
 3. Use these settings:
    - **Runtime:** Python 3
    - **Build Command:** `pip install -r requirements.txt`
-   - **Start Command:** `python gxprivetbot.py`
+   - **Start Command:** `python app.py`
    - **Health Check Path:** `/`
 4. Add the required environment variables above, deploy, and open the
    generated `https://...onrender.com/` URL. It should return `OK`.
