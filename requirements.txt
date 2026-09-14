@@ -1,4 +1,7 @@
+pyTelegramBotAPI
+Flask
 requests
+psutil
 beautifulsoup4
 pyotp
 google-auth
